@@ -7,11 +7,13 @@ pure-name: then
 defined-in-header: stlab/concurrency/future.hpp
 brief: Creates a continuation on the current future.
 declaration: then()
-example: [then_continuation_example.cpp, then_split_example.cpp]
+example: [then_continuation_example.cpp, then_split_example.cpp, then_reduction_example.cpp]
 description: |
   Creates a new continuation on the current object. 
 
-  Multiple `then()` invocations on the same future object realize a split. The result of this will be copied into all continuations. 
+  Multiple `then()` invocations on the same future object realize a split. The result of this will be copied into all continuations.
+
+  If the return type is of type `future<T>` or `future<void>`, then the return type will automatically reduced to `T` or `void`. (So far this is not supported for move-only types.) 
 
   If `T` of `future<T>` is a move only type, then a split is not possible of course.
 entities:
