@@ -20,7 +20,7 @@ entities:
   - kind: parameters
     list:
       - name: e
-        description: Executor which is used to sends the passed values from the sender down to the receiver.
+        description: Executor which is used to send the passed values from the sender down to the receiver.
   - kind: result
     description: Returns a pair of `sender` - `receiver` of type `T` that form a channel
 ---
